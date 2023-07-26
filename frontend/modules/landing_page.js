@@ -4,7 +4,7 @@ async function init() {
   //Fetches list of all cities along with their images and description
   let cities = await fetchCities();
   console.log(cities);
-  console.log(`http://3.6.117.203:8082/cities`);
+  console.log(`52.66.78.120:8082/cities`);
   console.log("From init()");
 
   //Updates the DOM with the cities
@@ -20,14 +20,12 @@ async function fetchCities() {
   // TODO: MODULE_CITIES
   // 1. Fetch cities using the Backend API and return the data
 
-  try{
-    let response = await fetch("http://3.6.117.203:8082/cities")
+  try {
+    let response = await fetch(`${config.backendEndpoint}/cities`);
     let data = await response.json();
     return data;
-    
-  }
-  catch(error){
-    console.log(error);
+  } catch (error) {
+    console.error(error);
     return null;
 
   }
@@ -36,13 +34,13 @@ async function fetchCities() {
   //   .then((data) => {
   //     console.log(data);
   //     return data
-  //   }).catch((error) =>  error) 
+  //   }).catch((error) =>  error)
 }
 
 //Implementation of DOM manipulation to add cities
 function addCityToDOM(id, city, description, image) {
   // TODO: MODULE_CITIES
-  // 1. Populate the City details and insert those details into the 
+  // 1. Populate the City details and insert those details into the
   // const container = document.getElementById("data");
   // const cityElement = document.createElement("div");
   // cityElement.classList.add("city");
@@ -51,8 +49,8 @@ function addCityToDOM(id, city, description, image) {
   // console.log(container);
   const addCity = document.getElementById("data");
   let cityDivEle = document.createElement("div");
-  cityDivEle.classList.add("col-sm-6","col-lg-3","mb-4");
-  cityDivEle.innerHTML=`<a href="pages/adventures/?city=${id}" id = "${id}">
+  cityDivEle.classList.add("col-sm-6", "col-lg-3", "mb-4");
+  cityDivEle.innerHTML = `<a href="pages/adventures/?city=${id}" id = "${id}">
   <div class = "tile">
   <img src = "${image}" alt = "Image not available"/>
   <div class = "tile-text text-center">
@@ -66,9 +64,5 @@ function addCityToDOM(id, city, description, image) {
   </a>`;
   addCity.appendChild(cityDivEle);
 }
-
-
-  
-
 
 export { init, fetchCities, addCityToDOM };

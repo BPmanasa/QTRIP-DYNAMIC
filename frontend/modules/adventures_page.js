@@ -5,6 +5,15 @@ import config from "../conf/index.js";
 function getCityFromURL(search) {
   // TODO: MODULE_ADVENTURES
   // 1. Extract the city id from the URL's Query Param and return it
+  let url = new URLSearchParams(search);
+  const cityId = url.get('city');
+  let display = document.getElementById("data");
+  display.innerHTML=`<a "http://13.127.217.66:8081/frontend/pages/adventures/?city=${id}" id="${id}">
+  <div id = "cityId">
+  </div>
+
+  </a>`
+console.log(display);
 
 }
 
