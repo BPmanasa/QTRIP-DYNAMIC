@@ -144,10 +144,16 @@ footer {
 /* activity-detail page css */
 
 .adventure-detail-card {
+  
+  /* box-sizing: border-box; */
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 16px;
-  /* margin: 8px; */
+  overflow: hidden;
+  
+  
+ 
+
 }
 
 .activity-card-image {
@@ -156,6 +162,10 @@ footer {
   cursor: pointer;
   -webkit-transition: 0.2s all;
   border-radius: 2px;
+  /* max-width: 100%; */
+  height: auto; 
+  margin-bottom: 8px;
+  /* padding:16px 16px; */
 }
 .activity-card-image:hover {
   -webkit-filter: brightness(50%);
