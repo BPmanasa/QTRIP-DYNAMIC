@@ -1,5 +1,5 @@
 import config from "../conf/index.js";
-
+y
 //Implementation to extract adventure ID from query params
 function getAdventureIdFromURL(search) {
   // TODO: MODULE_ADVENTURE_DETAILS
