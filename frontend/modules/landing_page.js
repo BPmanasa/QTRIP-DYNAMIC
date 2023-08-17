@@ -4,7 +4,7 @@ async function init() {
   //Fetches list of all cities along with their images and description
   let cities = await fetchCities();
   console.log(cities);
-  console.log(`52.66.78.120:8082/cities`);
+  // console.log(`52.66.78.120:8082/cities`);
   console.log("From init()");
 
   //Updates the DOM with the cities
